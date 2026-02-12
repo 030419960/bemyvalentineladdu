@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+ 
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+ 
+        h1 { color: #ff4d6d; }
+        p { line-height: 1.5; }
+    </style>
+</head>
+<body>
+ 
+<div class="card">
+    <h1 id="receiver"></h1>
+    <h2>From <span id="sender"></span></h2>
+    <h3 id="nickname"></h3>
+ 
+    <p id="letter1"></p>
+    <p id="letter2"></p>
+    <p id="letter3"></p>
+</div>
+ 
+<script>
+const params = new URLSearchParams(window.location.search);
+ 
+document.getElementById("receiver").innerText =
+    "Dear " + (params.get("receiver") || "My Love");
+ 
+document.getElementById("sender").innerText =
+    params.get("sender") || "Someone Special";
+ 
+document.getElementById("nickname").innerText =
+    params.get("nickname") || "";
+ 
+document.getElementById("letter1").innerText =
+    params.get("letter1") || "";
+ 
+document.getElementById("letter2").innerText =
+    params.get("letter2") || "";
+ 
+document.getElementById("letter3").innerText =
+    params.get("letter3") || "";
+</script>
+ 
+</body>
+</html>
