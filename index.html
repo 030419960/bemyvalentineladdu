@@ -1,173 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be My Valentine ❤️</title>
- 
-<style>
-body {
-    margin:0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(to right, #ff758c, #ff7eb3);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    overflow:hidden;
-}
- 
-.card {
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    width:90%;
-    max-width:500px;
-    text-align:center;
-    box-shadow:0 10px 40px rgba(0,0,0,0.2);
-    position:relative;
-    transition: all 0.6s ease;
-}
- 
-h1 {
-    margin:10px 0;
-    font-size:32px;
-    color:#444;
-}
- 
-button {
-    background:#ff4f81;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    margin:10px;
-    border-radius:25px;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
- 
-button:hover {
-    background:#ff1f6b;
-}
- 
-.hidden {
-    display:none;
-}
- 
-.heart {
-    position:fixed;
-    font-size:20px;
-    animation: floatUp 4s linear forwards;
-}
- 
-@keyframes floatUp {
-    0% { transform:translateY(0); opacity:1;}
-    100% { transform:translateY(-600px); opacity:0;}
-}
- 
-.fade {
-    animation: fadeIn 1s ease forwards;
-}
- 
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(15px);}
-    to {opacity:1; transform:translateY(0);}
-}
- 
-.finalText {
-    font-size:22px;
-    line-height:1.6;
-}
- 
-.glow {
-    font-size:28px;
-    color:#ff2d75;
-    animation: glow 1.5s infinite alternate;
-}
- 
-@keyframes glow {
-    from {text-shadow:0 0 5px #ff4f81;}
-    to {text-shadow:0 0 20px #ff2d75;}
-}
-</style>
-</head>
- 
-<body>
- 
-<div class="card fade" id="mainCard">
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="150"><br>
-    <h1 id="name">Rajesh</h1>
-    <p>Will you be my Valentine? 🥺❤️</p>
-    <button onclick="sayYes()">YES 💖</button>
-    <button onclick="moveNo(this)">NO 💔</button>
-</div>
- 
-<div class="card hidden" id="letterCard">
-    <h1>My Dearest ❤️</h1>
-    <p class="fade">
-        From the day you walked into my life, nothing has been simple — but everything has been real.
-        With you, I have seen my calm, my storms, my fears, and my strength.
-    </p>
-    <p class="fade">
-        I may not be perfect, but my love is honest.
-        I choose you not because I need you, but because I feel peace beside you.
-    </p>
-    <p class="fade">
-        I want us to grow into something safe, respectful and steady.
-    </p>
-    <button onclick="finalScreen()">Continue ❤️</button>
-</div>
- 
-<div class="card hidden" id="finalCard">
-    <h1 class="glow">Forever Starts Now 💍</h1>
-    <p class="finalText">
-        I don't want just a Valentine’s Day.<br>
-        I want a lifetime of hand-holding, silly fights,
-        deep talks, comfort hugs and stolen kisses.
-    </p>
-    <p class="finalText">
-        No more buttons. No more choices.<br>
-        Just us. ❤️
-    </p>
-    <h1 class="glow">I Love You.</h1>
-</div>
- 
-<script>
- 
-function moveNo(btn){
-    btn.style.position="absolute";
-    btn.style.top=Math.random()*300+"px";
-    btn.style.left=Math.random()*300+"px";
-}
- 
-function sayYes(){
-    createHearts();
-    setTimeout(()=>{
-        document.getElementById("mainCard").classList.add("hidden");
-        document.getElementById("letterCard").classList.remove("hidden");
-    },800);
-}
- 
-function finalScreen(){
-    document.getElementById("letterCard").classList.add("hidden");
-    document.getElementById("finalCard").classList.remove("hidden");
-    createHearts();
-}
- 
-function createHearts(){
-    for(let i=0;i<20;i++){
-        let heart=document.createElement("div");
-        heart.className="heart";
-        heart.innerHTML="💖";
-        heart.style.left=Math.random()*100+"vw";
-        heart.style.top="100vh";
-        document.body.appendChild(heart);
-        setTimeout(()=>{heart.remove()},4000);
-    }
-}
- 
-</script>
- 
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/bemyvalentine/assets/gift3-DWUFyua9.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WillYouBeMyValentine</title>
+    <script type="module" crossorigin src="/bemyvalentine/assets/index-B9oeGPrr.js"></script>
+    <link rel="modulepreload" crossorigin href="/bemyvalentine/assets/rolldown-runtime-Cn8xt2Gj.js">
+    <link rel="modulepreload" crossorigin href="/bemyvalentine/assets/vendor-BvCYSa5M.js">
+    <link rel="modulepreload" crossorigin href="/bemyvalentine/assets/vendor-animations-CD1NI-Fb.js">
+    <link rel="modulepreload" crossorigin href="/bemyvalentine/assets/vendor-react-DUsfwcQF.js">
+    <link rel="stylesheet" crossorigin href="/bemyvalentine/assets/vendor-BdrnINUN.css">
+    <link rel="stylesheet" crossorigin href="/bemyvalentine/assets/index-CA15fKqK.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
- 
